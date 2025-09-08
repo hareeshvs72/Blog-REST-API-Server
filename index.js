@@ -3,7 +3,7 @@ const JSONServer = require('json-server')
 
 // create server for running json file
 
-const  rBuilderServer  = JSONServer.create()
+const  blogServer  = JSONServer.create()
 
 // import db.json  
 
@@ -17,15 +17,15 @@ const router = JSONServer.router("db.json")
 const PORT = 3000 || process.env.PORT
 
 // use middleware json server
- rBuilderServer.use(middleware)
+ blogServer.use(middleware)
 
 //  define routes for client request 
 
-rBuilderServer.use(router)
+blogServer.use(router)
 
 // run server for client request
 
-rBuilderServer.listen(PORT,()=>{
+blogServer.listen(PORT,()=>{
     console.log(`rbuilder server started at port : ${PORT} and waiting for client request !!!`);
     
 })
